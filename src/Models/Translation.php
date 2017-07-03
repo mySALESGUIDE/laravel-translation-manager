@@ -1,7 +1,8 @@
 <?php namespace Barryvdh\TranslationManager\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use DB;
+use Illuminate\Database\Eloquent\Model;
+use Mpociot\Couchbase\Eloquent\HybridRelations;
 
 /**
  * Translation model
@@ -15,7 +16,11 @@ use DB;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-class Translation extends Model{
+class Translation extends Model {
+
+    use HybridRelations;
+
+    protected $connection = 'mysql';
 
     const STATUS_SAVED = 0;
     const STATUS_CHANGED = 1;
