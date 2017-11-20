@@ -45,7 +45,7 @@ class Translation extends Model {
     {
         $select = '';
 
-        switch (DB::getDriverName()){
+        switch ($this->getConnection()->getDriverName()){
             case 'mysql':
                 $select = 'DISTINCT `group`';
                 break;
