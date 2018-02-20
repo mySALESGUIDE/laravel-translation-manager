@@ -2,7 +2,6 @@
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
-use Mpociot\Couchbase\Eloquent\HybridRelations;
 
 /**
  * Translation model
@@ -17,8 +16,6 @@ use Mpociot\Couchbase\Eloquent\HybridRelations;
  * @property \Carbon\Carbon $updated_at
  */
 class Translation extends Model {
-
-    use HybridRelations;
 
     protected $connection = 'mysql';
 
